@@ -127,5 +127,13 @@ static function countOnStorage($date)
     return $prices;
 }
  ```
+ Далее все данные из Helper присваиваются переменным и передаются в шаблон:
+ ``` PHP
+$storage = Calculation::countOnStorage($date);
+$prices = Calculation::calculPrice($date);
+
+return view('pages.main', compact('tamplate', 'date', 'orders', 'storage', 'prices'));
+ ```
+ В итоге у нас парсятся в веб-страницу:
  
- 
+ <img scr="S">
