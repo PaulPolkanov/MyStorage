@@ -18,7 +18,7 @@
             <header>
                 <div class="wrap flex">
                     <span> CRM </span>
-                    <img class="" src="https://laravel.com/img/logomark.min.svg" alt="Laravel">
+                    {{-- <img class="" src="https://laravel.com/img/logomark.min.svg" alt="Laravel"> --}}
                     <span> My shope</span>
                 </div>
             </header>

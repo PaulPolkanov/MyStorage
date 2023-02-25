@@ -77,23 +77,28 @@
         let btn = document.querySelector('.sub_btn');
         let msg = document.querySelector('.err');
         let date_input = document.getElementById('start');
-        if(date_input.value != ''){
+        
+        if(date_input.value != '')
+        {
             btn.disabled = false
         }
-        date_input.addEventListener('change', (evt)=>{
-            console.log(evt.target.value);
-            if(evt.target.value == ""){
+        date_input.addEventListener('change', (evt)=>
+        {
+            if(evt.target.value == "")
+            {
                 btn.disabled = true;
                 msg.innerHTML = "<p class=\"msg_err\">Ошибка: Не выбрана дата!</p>";
             }
-            else{
+            else
+            {
                 btn.disabled = false
-                if(msg.querySelector('.msg_err')){
+
+                if(msg.querySelector('.msg_err'))
+                {
                     msg.removeChild(msg.querySelector('.msg_err'));
                 }
             }
 
         });
-        console.log(btn);
     </script>
 @endsection

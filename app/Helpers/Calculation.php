@@ -1,9 +1,9 @@
 <?php
     namespace App\Helpers;
 
-use App\Models\Order;
-use App\Models\Storage;
-use App\Models\Supplie;
+    use App\Models\Order;
+    use App\Models\Storage;
+    use App\Models\Supplie;
 
     class Calculation{
         //countOnStorage - статический метод, который принемает дату и расчитывает 
@@ -38,7 +38,7 @@ use App\Models\Supplie;
             $products = Storage::get();
             foreach($products as $item){
                 $productSupp = Supplie::where('id_product', $item->id)->where('date' , '<=', $date)->orderBy('date', 'desc')->first();
-                $price=0;
+                $price = 0;
                 if($productSupp){
                   //Вычислить себестоимость и делаем наценку 30%
                     $price = round($productSupp->cost/$productSupp->count/100*130);
