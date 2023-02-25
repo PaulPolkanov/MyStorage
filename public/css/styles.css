@@ -1,0 +1,94 @@
+body{
+    margin: 0;
+    color: #ffffff;
+    background: 100% 100% url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgb(42, 46, 53)'/%3E%3C/svg%3E") rgb(23 25 35);
+    min-height: 100vh;
+    font-family: scandia-web,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji!important;
+}
+header{
+    padding: 10px 0;
+    color: rgb(255 45 32);
+    font-size: 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+main{
+    margin-top: 20px;
+}
+.wrap{
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.flex{
+    display: flex;
+}
+header .flex{
+    justify-content: center;
+}
+header .flex *{
+    margin-left: 20px;
+}
+header .flex span{
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+main .form_date{
+    justify-content: space-around;
+}
+main input{
+    font-size: 20px;
+    color: #ffffff;
+    background-color: rgb(23 25 35);
+    border-radius: 10px;
+    box-sizing: border-box;
+    border-color: #ffffff;
+    padding: 2px;
+    width: 450px;
+}
+input[type=date]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+label{
+    font-size: 40px;
+    color: #ffffff;
+}
+.sub_btn{
+    width: fit-content;
+    font-size: 20px;
+    border-color: #ffffff;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+.info_bloks{
+    margin-top: 40px;
+    justify-content: space-between;
+}
+.info_block{
+    background:  rgb(23 25 35);
+    width: 30%;
+    min-height: 320px;
+    border-radius: 20px;
+    border: 3px solid rgb(50, 52, 55);
+}
+.info_block_content{
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    min-height: 60%;
+}
+.info_block h3{
+    margin-top: 10px;
+    margin-left: 20px;
+    color: rgb(255 45 32);
+    font-size: 25px;
+}
+.msg_err{
+    background-color: #2c0b0e;
+    border: 1px solid #842029;
+    border-radius: 10px;
+    padding: 10px;
+    color: #ea868f;
+    font-weight: bold;
+    text-align: center;
+}
