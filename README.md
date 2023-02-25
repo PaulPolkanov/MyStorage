@@ -21,9 +21,81 @@
  - HTML
  - CSS
  
-## Описание логики
+## База данных
 
+В базе данных есть три таблицы:
+ - Таблица 'storage' , где хронятся названия продуктов:
+    | id            | name               | count |
+    | ------------- |:------------------:| -----:|
+    | 1             | Колбаса            |     0 |
+    | 2             | Пармезан           |     0 |
+    | 3             | Левый носок        |     0 |
+    
+ - Таблица 'supplies' , где хронятся поставки:
+    | id | name | id_product | count | cost | date 
+    | --- | --- | --- | --- | --- | --- 
+    | 1 | 1 | 1 | 300 | 5000 | 2021-01-01 
+    
+ - Таблица 'orders' , где хронятся предзаказы:
+    | id | name | id_product | count | price | date 
+    | --- | --- | --- | --- | --- | --- 
+    | 1 | tb-0 | 3 | 1 | 5 | 2021-01-13 
+
+Связи между таблицами организованы в ORM Laravel и связаны все таблици по id товаров. Для этого были созданны 3 модели:
+ - Модель [Storage](https://github.com/PaulPolkanov/MyStorage/blob/master/app/Models/Storage.php),
+``` PHP
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Storage extends Model
+{
+    protected $table = 'storage';
+    public $timestamps= false;
+    public function orders(){
+        return $this->hasMany(Order::class, 'id_product');
+    }
+    public function supplies(){
+        return $this->hasMany(Supplie::class, 'id_product');
+    }
+}
+
+```
+ - Модель [Order](https://github.com/PaulPolkanov/MyStorage/blob/master/app/Models/Order.php),
+``` PHP
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Order extends Model
+{
+    protected $table =  'orders';
+    public function product(){
+        return $this->belongsTo(Storage::class, 'id_product');
+    }
+}
+```
+ - Модель [Supplie](https://github.com/PaulPolkanov/MyStorage/blob/master/app/Models/Supplie.php),
+ ``` PHP
+ namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Supplie extends Model
+{
+    protected $table =  'supplies';
+    public function product(){
+        return $this->belongsTo(Storage::class, 'id_product');
+    }
+}
+ ```
+ 
+## Описание логики
 Вся логика приложения завязана на дате, которую выбрал пользователь. Выбор даты реализовон формой с полем для ввода даты и кнопкой отправки:
+
 ``` html
 <form action="/date" method="post">
     <div class="flex form_date">
@@ -136,4 +208,4 @@ return view('pages.main', compact('tamplate', 'date', 'orders', 'storage', 'pric
  ```
  В итоге у нас парсятся в веб-страницу:
  
- <img scr="S">
+ <img width="700px" src="https://github.com/PaulPolkanov/MyStorage/blob/master/public/image/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20(405).png">
