@@ -10,7 +10,7 @@
  
  ## Демо видео 
  
- <a href="https://vk.com/video284614176_456239236">
+ <a href="https://www.youtube.com/watch?v=lOXPrDFGdCg">
     <img style="text-align: centr;" width="500px" src="https://github.com/PaulPolkanov/MyStorage/blob/master/public/image/video.png?raw=true">
  </a>
 
