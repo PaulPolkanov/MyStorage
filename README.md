@@ -10,11 +10,14 @@
  
  ## Демо видео 
  
- <a href="https://vk.com/video284614176_456239236"><img style="text-align: centr;" width="500px" src="https://github.com/PaulPolkanov/MyStorage/blob/master/public/image/video.png?raw=true"></a>
+ <a href="https://vk.com/video284614176_456239236">
+    <img style="text-align: centr;" width="500px" src="https://github.com/PaulPolkanov/MyStorage/blob/master/public/image/video.png?raw=true">
+ </a>
 
 К сожалению на видео не отобразилось окно для выбора даты:
 
-<a href="https://vk.com/video284614176_456239236"><img style="text-align: centr;" width="400px" src="https://github.com/PaulPolkanov/MyStorage/blob/master/public/image/image.png"></a>
+<img style="text-align: centr;" width="400px" src="https://github.com/PaulPolkanov/MyStorage/blob/master/public/image/image.png">
+
  ## Стек проекта
  В проекте были использованы следующие технологии:
  - PHP 8
